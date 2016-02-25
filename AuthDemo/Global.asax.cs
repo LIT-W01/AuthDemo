@@ -16,6 +16,7 @@ namespace AuthDemo
     {
         protected void Application_Start()
         {
+            GlobalFilters.Filters.Add(new LoggedInActionFilter());
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

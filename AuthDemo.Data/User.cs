@@ -79,31 +79,55 @@ namespace AuthDemo.Data
                 return correctPassword ? user : null; //ternary operator
             }
         }
-    }
 
-    public static class PasswordHelper
-    {
-        public static string GenerateSalt()
+        public User GetUserByUsername(string username)
         {
-            RNGCryptoServiceProvider provider = new RNGCryptoServiceProvider();
-            byte[] bytes = new byte[15];
-            provider.GetBytes(bytes);
-            return Convert.ToBase64String(bytes);
+            using (var connection = new SqlConnection(_connectionString))
+            using (var cmd = connection.CreateCommand())
+            {
+                cmd.CommandText = "SELECT * FROM Users WHERE Username = @username";
+                cmd.Parameters.AddWithValue("@username", username);
+                connection.Open();
+                var reader = cmd.ExecuteReader();
+                if (!reader.Read())
+                {
+                    return null; //username not found....
+                }
+
+                User user = new User();
+                user.Id = (int)reader["Id"];
+                user.Name = (string)reader["Name"];
+                user.PasswordHash = (string)reader["PasswordHash"];
+                user.Salt = (string)reader["Salt"];
+                user.Username = (string)reader["Username"];
+                return user;
+            }
         }
 
-        public static string HashPassword(string password, string salt)
+        public static class PasswordHelper
         {
-            SHA256Managed managed = new SHA256Managed();
-            byte[] passwordBytes = Encoding.ASCII.GetBytes(password);
-            byte[] saltBytes = Encoding.ASCII.GetBytes(salt);
-            byte[] combined = passwordBytes.Concat(saltBytes).ToArray();
-            return Convert.ToBase64String(managed.ComputeHash(combined));
-        }
+            public static string GenerateSalt()
+            {
+                RNGCryptoServiceProvider provider = new RNGCryptoServiceProvider();
+                byte[] bytes = new byte[15];
+                provider.GetBytes(bytes);
+                return Convert.ToBase64String(bytes);
+            }
 
-        public static bool PasswordMatch(string input, string passwordHash, string salt)
-        {
-            string inputHash = HashPassword(input, salt);
-            return inputHash == passwordHash;
+            public static string HashPassword(string password, string salt)
+            {
+                SHA256Managed managed = new SHA256Managed();
+                byte[] passwordBytes = Encoding.ASCII.GetBytes(password);
+                byte[] saltBytes = Encoding.ASCII.GetBytes(salt);
+                byte[] combined = passwordBytes.Concat(saltBytes).ToArray();
+                return Convert.ToBase64String(managed.ComputeHash(combined));
+            }
+
+            public static bool PasswordMatch(string input, string passwordHash, string salt)
+            {
+                string inputHash = HashPassword(input, salt);
+                return inputHash == passwordHash;
+            }
         }
     }
 }
