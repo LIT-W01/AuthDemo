@@ -1,0 +1,5 @@
+c:\Users\alexfriedman\documents\visual studio 2013\Projects\AuthDemo\AuthDemo.Data\bin\Debug\AuthDemo.Data.dll
+c:\Users\alexfriedman\documents\visual studio 2013\Projects\AuthDemo\AuthDemo.Data\bin\Debug\AuthDemo.Data.pdb
+c:\Users\alexfriedman\documents\visual studio 2013\Projects\AuthDemo\AuthDemo.Data\obj\Debug\AuthDemo.Data.csprojResolveAssemblyReference.cache
+c:\Users\alexfriedman\documents\visual studio 2013\Projects\AuthDemo\AuthDemo.Data\obj\Debug\AuthDemo.Data.dll
+c:\Users\alexfriedman\documents\visual studio 2013\Projects\AuthDemo\AuthDemo.Data\obj\Debug\AuthDemo.Data.pdb

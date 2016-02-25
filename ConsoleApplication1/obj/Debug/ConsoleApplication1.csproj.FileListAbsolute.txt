@@ -1,0 +1,8 @@
+c:\Users\alexfriedman\documents\visual studio 2013\Projects\AuthDemo\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+c:\Users\alexfriedman\documents\visual studio 2013\Projects\AuthDemo\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+c:\Users\alexfriedman\documents\visual studio 2013\Projects\AuthDemo\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+c:\Users\alexfriedman\documents\visual studio 2013\Projects\AuthDemo\ConsoleApplication1\bin\Debug\AuthDemo.Data.dll
+c:\Users\alexfriedman\documents\visual studio 2013\Projects\AuthDemo\ConsoleApplication1\bin\Debug\AuthDemo.Data.pdb
+c:\Users\alexfriedman\documents\visual studio 2013\Projects\AuthDemo\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+c:\Users\alexfriedman\documents\visual studio 2013\Projects\AuthDemo\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+c:\Users\alexfriedman\documents\visual studio 2013\Projects\AuthDemo\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
